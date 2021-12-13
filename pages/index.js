@@ -1,7 +1,13 @@
-
+import Navbar from '../components/Navbar'
+import Featured from '../components/Featured'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
-    <h1>Next.js + Tailwind CSS Starter</h1>
+    <>
+      <Navbar />
+      <Featured />
+      <Footer />
+    </>
   )
 }
