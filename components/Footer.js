@@ -1,37 +1,38 @@
 import { useState } from 'react'
-import { icon, solidIcon } from './Navbar'
 
-const HomeIcon = icon('estate')
-const HomeIconSolid = solidIcon('estate')
-const RaffleIcon = icon('ticket')
-const UilBell = icon('bell')
+import { AiFillHome } from 'react-icons/ai'
+import { AiOutlineHome } from 'react-icons/ai'
+import { IoTicket } from 'react-icons/io5'
+import { IoTicketOutline } from 'react-icons/io5'
+import { RiAccountPinCircleLine } from 'react-icons/ri'
+import { RiAccountPinCircleFill } from 'react-icons/ri'
 
 export default function Footer() {
-  const [homeSelect, setHomeSelect] = useState(false)
-  const [myRaffleSelect, setMyRaffleSelect] = useState(false)
-  const [accountSelect, setAccountSelect] = useState(false)
+  const [selectedFooter, setSelectedFooter] = useState('home')
   return (
     <div className='relative'>
-      <div className='flex items-center justify-between  bg-gray-100 fixed bottom-0 w-full mb-1 p-2'>
-        <div onClick={() => setHomeSelect((p) => !p)}>
-          {homeSelect ? (
-            <HomeIconSolid color='#22577E' size='30' />
+      <div className='flex items-center justify-between  bg-gray-300 fixed bottom-0 w-full  p-2 px-5'>
+        <div onClick={() => setSelectedFooter('home')}>
+          {selectedFooter == 'home' ? (
+            <div>
+              <AiFillHome color='#22577E' size='30' />
+            </div>
           ) : (
-            <HomeIcon color='#22577E' size='30' />
+            <AiOutlineHome color='#555' size='30' />
           )}
         </div>
-        <div onClick={() => setMyRaffleSelect((p) => !p)}>
-          {myRaffleSelect ? (
-            <UilClose color='#22577E' size='30' />
+        <div onClick={() => setSelectedFooter('raffle')}>
+          {selectedFooter == 'raffle' ? (
+            <IoTicket color='#22577E' size='30' />
           ) : (
-            <RaffleIcon color='#22577E' size='30' />
+            <IoTicketOutline color='#555' size='30' />
           )}
         </div>
-        <div onClick={() => setAccountSelect((p) => !p)}>
-          {accountSelect ? (
-            <UilClose color='#22577E' size='30' />
+        <div onClick={() => setSelectedFooter('account')}>
+          {selectedFooter == 'account' ? (
+            <RiAccountPinCircleFill color='#22577E' size='30' />
           ) : (
-            <UilBell color='#22577E' size='30' />
+            <RiAccountPinCircleLine color='#555' size='30' />
           )}
         </div>
       </div>

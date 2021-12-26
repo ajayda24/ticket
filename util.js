@@ -5,12 +5,3 @@ export const icon = (iName) => {
     ssr: false,
   })
 }
-
-export const solidIcon = (iName) => {
-  return dynamic(
-    () => import(`@iconscout/react-unicons-solid/icons/uil-${iName}`),
-    {
-      ssr: false,
-    }
-  )
-}

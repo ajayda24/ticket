@@ -2,7 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background: url('./public/images/bg.webp') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
 .absolute-center {
   position: absolute;
-  transform: translateX(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.shadow-bottom {
+  box-shadow: 0 5px 5px -5px #333;
+}
+
+.bg-primary {
+  background-color: #22577e;
+}
+
+.text-primary {
+  background-color: #22577e;
+}
+
+.glass {
+  @apply bg-[#ffffff80] backdrop-blur-md;
+}
+.dark-glass {
+  @apply bg-[#00000060] backdrop-blur-md;
+}
+
+.btn-primary {
+  @apply p-3 bg-primary text-white flex justify-center items-center gap-3 rounded-md w-full;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 20px;
+  background: transparent;
+  display: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #22577e;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22577e;
 }

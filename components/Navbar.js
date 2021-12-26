@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { icon } from '../util'
 
-const UilBars = icon('bars')
-const UilClose = icon('times')
-const UilTrees = icon('trees')
-const UilBell = icon('bell')
+import { FaBars } from 'react-icons/fa'
+import { IoIosClose } from 'react-icons/io'
+import { FaSnowboarding } from 'react-icons/fa'
+import { HiOutlineBell } from 'react-icons/hi'
 
 const Menu = ({ menuOpen = false, menuHandler }) => {
   return (
@@ -31,25 +30,25 @@ export default function Navbar() {
   const [notiOpen, setNotiOpen] = useState(false)
 
   return (
-    <div className='relative'>
-      <div className='flex items-center justify-between  bg-gray-100 fixed top-0 w-full mb-1 p-2'>
+    <div className='relative z-10'>
+      <div className='flex items-center justify-between  bg-gray-300 fixed top-0 w-full mb-1 p-2 px-4 '>
         <div onClick={() => setMenuOpen((p) => !p)}>
           {menuOpen ? (
-            <UilClose color='#22577E' size='30' />
+            <IoIosClose color='#22577E' size='30' />
           ) : (
-            <UilBars color='#22577E' size='30' />
+            <FaBars color='#22577E' size='30' />
           )}
         </div>
         <div className='flex gap-3 items-center'>
-          <UilTrees color='#22577E' size='30' />
+          <FaSnowboarding color='#22577E' size='30' />
 
           <h1>ABCABC</h1>
         </div>
         <div onClick={() => setNotiOpen((p) => !p)}>
           {notiOpen ? (
-            <UilClose color='#22577E' size='30' />
+            <IoIosClose color='#22577E' size='30' />
           ) : (
-            <UilBell color='#22577E' size='30' />
+            <HiOutlineBell color='#22577E' size='30' />
           )}
         </div>
       </div>
